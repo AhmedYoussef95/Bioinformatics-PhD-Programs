@@ -1,4 +1,3 @@
-
 library(shiny)
 library(leaflet)
 library(maps)
@@ -10,7 +9,6 @@ appData$Deadline <- format(appData$Deadline, "%b %d") #e.g. Dec 15
 
 ui <- fluidPage(
   
-  # Application title
   titlePanel("Bioinformatics PhD Programs in the US"),
   
   mainPanel(width="100%",
@@ -21,7 +19,6 @@ ui <- fluidPage(
   )
 )
 
-# Define server logic required to draw a histogram
 server <- function(input, output) {
   
   output$map <- renderLeaflet({
