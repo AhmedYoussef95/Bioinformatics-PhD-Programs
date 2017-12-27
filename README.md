@@ -8,4 +8,10 @@ The data can be viewed in either a map format or a table format, and the user ca
 
 This app was developed using the *Shiny* package in R. The *Leaflet* package was also used for rendering the map.
 
--Ahmed Youssef
+## Screenshots
+
+![alt text](https://user-images.githubusercontent.com/14280022/34367910-c4fa1f0c-ea7d-11e7-86eb-5af29df5ba85.png)
+![alt text](https://user-images.githubusercontent.com/14280022/34367911-c971af78-ea7d-11e7-9e71-0b954a7a76cd.png)
+![alt text](https://user-images.githubusercontent.com/14280022/34367914-cd59eb8c-ea7d-11e7-8460-58fe1657723b.png)
+
+ *- Ahmed Youssef*
