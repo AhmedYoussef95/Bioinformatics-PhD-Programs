@@ -15,6 +15,10 @@ ui <- fluidPage(
             tabsetPanel(
               tabPanel("Map",leafletOutput("map",  height = 600)),
               tabPanel("Table",dataTableOutput("table"))
+            ),
+            helpText(p(em('©️ Ahmed Youssef'))),
+            tags$div(class="header", checked=NA,
+                     tags$a(href="https://github.com/AhmedYoussef95/Bioinformatics-PhD-Programs", "Source Code")
             )
   )
 )
