@@ -1,0 +1,5 @@
+#!/bin/sh
+Rscript -e 'install.packages("BiocManager", ask = FALSE)'
+rm -rf /srv/shiny-server/
+rm -rf /tmp/install
+
