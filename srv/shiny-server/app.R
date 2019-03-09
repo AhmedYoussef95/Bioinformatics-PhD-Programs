@@ -14,14 +14,15 @@ ui <- fluidPage(
   
   mainPanel(width="100%",
             tabsetPanel(
-              tabPanel("Map",leafletOutput("map",  height = 600)),
+              tabPanel("Map",leafletOutput("map")),
               tabPanel("Table",dataTableOutput("table"))
             ),
             helpText(p(em('©️ Ahmed Youssef'))),
             tags$div(class="header", checked=NA,
-                     tags$a(href="https://github.com/AhmedYoussef95/Bioinformatics-PhD-Programs", "Source Code")
-            )
-  )
+                     tags$a(href="https://github.com/AhmedYoussef95/Bioinformatics-PhD-Programs", "Source Code", target = "_blank"))
+  ),
+  #automatically resize map to fit screen (height = 85% of window height)
+  tags$head(tags$style("#map{height:85vh !important;}"))
 )
 
 server <- function(input, output) {
@@ -49,10 +50,11 @@ server <- function(input, output) {
   
   output$table <- renderDataTable({
     names(appData)[4] <- "App Fee ($)"
-    appData$University = paste0("<a href='",appData$Website,"'>",appData$University,"</a>")
-    DT::datatable(appData[,1:7], escape = F)
+    appData$University = paste0("<a href='",appData$Website,"' target='_blank'>",appData$University,"</a>")
+    DT::datatable(appData[,1:7], escape = F, rownames = F,
+                  extensions = c('Buttons', 'Responsive'),
+                  options = list(buttons = c("copy", "csv", "excel"), dom = "Bfrtip", pageLength = 50))
   })
-  
 }
 
 shinyApp(ui = ui, server = server)
