@@ -32,7 +32,7 @@ server <- function(input, output) {
     popupText <- vector(length = length(appData$University))
     for(i in 1 : length(popupText)){
       popupText[i] <- paste(
-        p(a(appData$University[i], href = appData$Website[i])),
+        p(a(appData$University[i], href = appData$Website[i], target = "_blank")),
         p(strong("Program:"), appData$Program[i]), 
         p(strong("Deadline:"), appData$Deadline[i]),
         p(strong("App Fee:"), dollar(appData$`App Fee`)[i]),
